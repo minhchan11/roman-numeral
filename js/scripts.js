@@ -19,15 +19,14 @@ function convert () {
    if(Input.length===1) {
      for(i=0; i<10; i++) {
        if (i=(parseInt(Input)-1)) {
-         return OneTen[i] }
+      Output += OneTen[i] }
      }
    } else if (Input.length===2) {
-      return UnderNinety[a-1];
-      return OneTen[b-1];
+      Output = UnderNinety[a-1]+ OneTen[b-1];
    } else if(Input.length===3) {
-
+      Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];
    } else {
-
+      Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1] + OneTen[d-1]
    }
 };
 
