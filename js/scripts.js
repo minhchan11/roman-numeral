@@ -11,34 +11,37 @@ var c = 0;
 var d = 0;
 
 function convert () {
-  console.log(Input.length);
   a = parseInt(Input.charAt(0));
   b = parseInt(Input.charAt(1));
   c = parseInt(Input.charAt(2));
   d = parseInt(Input.charAt(3));
-   if(Input.length===1) {
-     for(i=0; i<10; i++) {
-       if (i=(parseInt(Input)-1)) {
-      Output += OneTen[i] }
-     }
-   } else if (Input.length===2) {
-      Output = UnderNinety[a-1]+ OneTen[b-1];
-   } else if(Input.length===3) {
-      Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];
-   } else {
-      Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1] + OneTen[d-1]
-   }
+
+
+  if(Input>3999|| Input<=0) {
+    alert("Please keep your entry between 1-3,999");
+  } else {
+    if(Input.length===1) {
+      for(i=0; i<10; i++) {
+        if (i=(parseInt(Input)-1)) {
+       Output += OneTen[i] }
+      }
+    } else if (Input.length===2) {
+       Output = UnderNinety[a-1]+ OneTen[b-1];
+    } else if(Input.length===3) {
+       Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];
+    } else {
+       Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1] + OneTen[d-1]
+    }
+  }
 };
-
-
 
 //User Interface
 $("document").ready(function() {
   $(".form-group").submit(function(event) {
     event.preventDefault();
     Input = $("#userInput").val();
-    console.log(Input);
-    $("#result").show();
     convert();
+    $(".result").show();
+    $("#numeral").text(Output);
   });
 });
