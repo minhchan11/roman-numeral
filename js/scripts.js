@@ -30,13 +30,13 @@ function convert () {
         } else { Output = UnderNinety[a-1]+ OneTen[b-1];}
     } else if(Input.length===3) {
         if (c == 0) {Output = UnderThousand[a-1] + UnderNinety[b-1]}
-        else if ( b === 0) {Output = UnderThousand[a-1] + OneTen[c-1]}
-        else {Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];}
+        else if ( b === 0) {Output = UnderThousand[a-1] + OneTen[c-1]}    //DEBUG for zero
+        else {Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];} //DEBUG for zero
     } else {
-      if (d == 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1]}
-      if ( (b === 0) && (c === 0)) {Output = OverThousand[a-1] + OneTen[d-1]}
-      else if ( c === 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + OneTen[d-1]}
-      else if ( b === 0) {Output = OverThousand[a-1] + UnderNinety[c-1] + OneTen[d-1]}
+      if (d == 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1]} //DEBUG for zero
+      if ( (b === 0) && (c === 0)) {Output = OverThousand[a-1] + OneTen[d-1]} //DEBUG for zero
+      else if ( c === 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + OneTen[d-1]} //DEBUG for zero
+      else if ( b === 0) {Output = OverThousand[a-1] + UnderNinety[c-1] + OneTen[d-1]} //DEBUG for zero
       else { Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1] + OneTen[d-1]}
     }
   }
