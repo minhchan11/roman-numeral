@@ -4,7 +4,7 @@ var OneTen = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 var UnderNinety = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
 var UnderThousand = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
 var OverThousand = ["M", "MM", "MMM"];
-var Output = 0;
+var Output = "";
 var a = 0;
 var b = 0;
 var c = 0;
@@ -21,10 +21,7 @@ function convert () {
     alert("Please keep your entry between 1-3,999");
   } else {
     if(Input.length===1) {
-      for(i=0; i<10; i++) {
-        if (i=(parseInt(Input)-1)) {
-       Output += OneTen[i] }
-      }
+       Output += OneTen[a-1]
     } else if (Input.length===2) {
         if (b === 0) {Output = UnderNinety[a-1]
         } else { Output = UnderNinety[a-1]+ OneTen[b-1];}
