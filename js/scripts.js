@@ -1,9 +1,9 @@
 //Business Logic
 var Input = 0;
-var OneTen = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
-var UnderNinety = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-var UnderThousand = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-var OverThousand = ["M", "MM", "MMM"];
+var OneTen = ["","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+var UnderNinety = ["","X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+var UnderThousand = ["","C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+var OverThousand = ["","M", "MM", "MMM"];
 var Output = "";
 var a = 0;
 var b = 0;
@@ -21,20 +21,13 @@ function convert () {
     alert("Please keep your entry between 1-3,999");
   } else {
     if(Input.length===1) {
-       Output += OneTen[a-1]
+      Output += OneTen[a];
     } else if (Input.length===2) {
-        if (b === 0) {Output = UnderNinety[a-1]
-        } else { Output = UnderNinety[a-1]+ OneTen[b-1];}
+      Output = UnderNinety[a]+ OneTen[b];
     } else if(Input.length===3) {
-        if (c == 0) {Output = UnderThousand[a-1] + UnderNinety[b-1]}
-        else if ( b === 0) {Output = UnderThousand[a-1] + OneTen[c-1]}    //DEBUG for zero
-        else {Output = UnderThousand[a-1] + UnderNinety[b-1]+OneTen[c-1];} //DEBUG for zero
+      Output = UnderThousand[a] + UnderNinety[b]+OneTen[c];
     } else {
-      if (d == 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1]} //DEBUG for zero
-      if ( (b === 0) && (c === 0)) {Output = OverThousand[a-1] + OneTen[d-1]} //DEBUG for zero
-      else if ( c === 0) {Output = OverThousand[a-1] + UnderThousand[b-1] + OneTen[d-1]} //DEBUG for zero
-      else if ( b === 0) {Output = OverThousand[a-1] + UnderNinety[c-1] + OneTen[d-1]} //DEBUG for zero
-      else { Output = OverThousand[a-1] + UnderThousand[b-1] + UnderNinety[c-1] + OneTen[d-1]}
+      Output = OverThousand[a] + UnderThousand[b] + UnderNinety[c] + OneTen[d]
     }
   }
 };
